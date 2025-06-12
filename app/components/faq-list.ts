@@ -19,6 +19,7 @@ export default class FaqListComponent extends Component<Signature> {
       query: 'How many exercises are there?',
       answer: `<p>We have over 250 stages split across 10 challenges which you can attempt in 22 programming languages. Here's what you'll be building:</p>
 
+
 <ul>
 <li>Build Your Own Redis</li>
 <li>Build Your Own Git</li>
