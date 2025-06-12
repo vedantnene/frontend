@@ -16,8 +16,8 @@ export default class FaqListComponent extends Component<Signature> {
 
   faqs: Faq[] = [
     {
-      query: 'How many challenges do you offer?',
-      answer: `<p>We currently offer 10 challenges comprising of 250+ stages and support 22 programming languages.</p>
+      query: 'How many exercises are there?',
+      answer: `<p>We have over 250 stages split across 10 challenges which you can attempt in 22 programming languages. Here's what you'll be building:</p>
 
 <ul>
 <li>Build Your Own Redis</li>
