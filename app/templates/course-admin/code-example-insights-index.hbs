@@ -10,17 +10,8 @@
         </div>
       </div>
       <div>
-        {{#if @model.selectedLanguage}}
-          <div class="flex items-center gap-2">
-            <div class="text-sm text-gray-400">
-              Showing insights for
-              <span class="font-semibold text-gray-600">{{@model.selectedLanguage.name}}</span>
-            </div>
-          </div>
-        {{/if}}
-
         <LanguageDropdown
-          @languages={{@model.languages}}
+          @languages={{this.sortedLanguagesForDropdown}}
           @onRequestedLanguageChange={{this.onLanguageChange}}
           @requestedLanguage={{@model.selectedLanguage}}
           @selectedLanguage={{@model.selectedLanguage}}

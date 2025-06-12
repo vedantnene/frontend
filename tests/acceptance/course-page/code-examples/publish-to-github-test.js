@@ -7,6 +7,7 @@ import { setupAnimationTest } from 'ember-animated/test-support';
 import { module, test } from 'qunit';
 import { setupApplicationTest } from 'codecrafters-frontend/tests/helpers';
 import { signIn } from 'codecrafters-frontend/tests/support/authentication-helpers';
+import courseOverviewPage from 'codecrafters-frontend/tests/pages/course-overview-page';
 
 module('Acceptance | course-page | code-examples | publish-to-github', function (hooks) {
   setupApplicationTest(hooks);
@@ -29,12 +30,13 @@ module('Acceptance | course-page | code-examples | publish-to-github', function 
 
     await catalogPage.visit();
     await catalogPage.clickOnCourse('Build your own Redis');
+    await courseOverviewPage.clickOnStartCourse();
     await coursePage.sidebar.clickOnStepListItem('Respond to PING');
     await coursePage.clickOnHeaderTabLink('Code Examples');
 
     assert.notOk(coursePage.configureGithubIntegrationModal.isVisible, 'configure github integration modal should not be visible');
 
-    await codeExamplesPage.solutionCards[0].changedFileCards[0].clickOnPublishToGithubButton();
+    await codeExamplesPage.solutionCards[0].highlightedFileCards[0].clickOnPublishToGithubButton();
     assert.ok(coursePage.configureGithubIntegrationModal.isVisible, 'configure github integration modal should be visible');
 
     // The rest is tested in course-page/publish-to-github-test.js
